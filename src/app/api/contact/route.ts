@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server'
-import { Resend } from 'resend'
 import { contactSchema } from '@/lib/validations'
 import { CONTACT, SITE_NAME } from '@/lib/constants'
 import { services } from '@/lib/services'
-
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
@@ -23,6 +20,16 @@ export async function POST(request: Request) {
     const serviceLabel = service
       ? services.find((s) => s.slug === service)?.title ?? service
       : 'Neuvedeno'
+
+    // Inicializovat Resend až při volání (ne při importu modulu)
+    const apiKey = process.env.RESEND_API_KEY
+    if (!apiKey) {
+      console.warn('RESEND_API_KEY not set — email not sent')
+      return NextResponse.json({ success: true, warning: 'Email not configured' })
+    }
+
+    const { Resend } = await import('resend')
+    const resend = new Resend(apiKey)
 
     const { error } = await resend.emails.send({
       from: `${SITE_NAME} <noreply@podlahyperk.cz>`,
@@ -55,7 +62,7 @@ export async function POST(request: Request) {
               <td style="padding: 10px 0; color: #1a1510;">${serviceLabel}</td>
             </tr>
           </table>
-          <div style="margin-top: 20px; padding: 20px; background: #faf9f7; border-radius: 8px; border-left: 3px solid #c8a96e;">
+          <div style="margin-top: 20px; padding: 20px; background: #faf9f7; border-left: 3px solid #c8a96e;">
             <p style="color: #6b5f4e; font-size: 14px; margin: 0 0 8px;">Zpráva:</p>
             <p style="color: #1a1510; line-height: 1.6; margin: 0; white-space: pre-wrap;">${message}</p>
           </div>
