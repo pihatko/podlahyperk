@@ -1,0 +1,72 @@
+/* Shared page header styles — used across all subpages */
+
+.pageHeader {
+  padding: 140px 0 var(--space-3xl);
+  background-color: var(--color-brand-dark);
+  background-image: repeating-linear-gradient(
+    105deg,
+    transparent,
+    transparent 60px,
+    rgba(14, 168, 166, 0.03) 60px,
+    rgba(14, 168, 166, 0.03) 61px
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional photo background — add .withPhoto to enable */
+.withPhoto {
+  background-color: transparent;
+  background-image: none;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(8, 14, 14, 0.88) 0%,
+    rgba(8, 14, 14, 0.65) 55%,
+    rgba(8, 14, 14, 0.40) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900; /* Heavy — globálně pro všechny pageHeadery */
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-lg);
+}
+
+.desc {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.9); /* globálně světlejší */
+  line-height: 1.75;
+  max-width: 560px;
+}

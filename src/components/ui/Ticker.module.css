@@ -1,0 +1,49 @@
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+  will-change: transform;
+  flex-shrink: 0;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.itemText {
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-brand-dark);
+}
+
+.sep {
+  color: var(--color-accent);
+  font-size: 1rem;
+  font-weight: 900;
+}

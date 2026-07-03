@@ -1,0 +1,125 @@
+.pageHeader {
+  padding: 140px 0 var(--space-3xl);
+  background-color: var(--color-brand);
+  background-image: repeating-linear-gradient(
+    105deg,
+    transparent,
+    transparent 60px,
+    rgba(200, 169, 110, 0.04) 60px,
+    rgba(200, 169, 110, 0.04) 61px
+  );
+}
+
+.back {
+  margin-bottom: var(--space-xl);
+  color: rgba(200, 169, 110, 0.7) !important;
+  padding-left: 0 !important;
+}
+
+.back:hover {
+  color: var(--color-accent) !important;
+  background: transparent !important;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-lg);
+}
+
+.desc {
+  font-size: 1.0625rem;
+  color: rgba(232, 213, 176, 0.75);
+  line-height: 1.75;
+  max-width: 640px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.featuresTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-brand);
+  margin-bottom: var(--space-xl);
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.featureItem {
+  display: flex !important;
+  align-items: flex-start;
+  gap: var(--space-md);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.featureIcon {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  margin-top: 2px;
+}
+
+.contactCol {
+  position: sticky;
+  top: 100px;
+}
+
+.contactCard {
+  padding: var(--space-2xl);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contactTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-brand);
+}
+
+.contactDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.contactBtn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .contactCol {
+    position: static;
+  }
+}

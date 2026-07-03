@@ -1,0 +1,117 @@
+.section {
+  position: relative;
+  padding: var(--space-5xl) 0;
+  overflow: hidden;
+}
+
+/* Background photo */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* Dark overlay — keeps text readable */
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(8, 14, 14, 0.88) 0%,
+    rgba(8, 14, 14, 0.72) 50%,
+    rgba(8, 14, 14, 0.50) 100%
+  );
+}
+
+/* Teal top border accent */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-accent);
+  z-index: 1;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3xl);
+  flex-wrap: wrap;
+}
+
+.text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.60);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.phoneBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.875rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.phoneBtn:hover {
+  border-color: var(--color-accent);
+  background-color: rgba(14, 168, 166, 0.15);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xl);
+  }
+  .actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .phoneBtn {
+    justify-content: center;
+  }
+}

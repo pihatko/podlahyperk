@@ -1,0 +1,150 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-color: #0d1212;
+}
+
+/* ── Photo layer ── */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* clip-path animated by GSAP */
+  will-change: clip-path;
+}
+
+/* Extra wrapper for parallax translate */
+.bgInner {
+  position: absolute;
+  inset: -20% 0; /* extra height so parallax doesn't show gaps */
+  will-change: transform;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+/* Dark gradient overlay — bottom heavier for text legibility */
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 12, 12, 0.93) 0%,
+    rgba(8, 12, 12, 0.52) 40%,
+    rgba(8, 12, 12, 0.20) 100%
+  );
+}
+
+/* ── Content ── */
+.inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 120px;
+  padding-bottom: var(--space-5xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  max-width: 920px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.heading {
+  font-size: clamp(3.5rem, 10vw, 7.5rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.headingLine1 {
+  display: block;
+  color: #ffffff;
+}
+
+.headingLine2 {
+  display: block;
+  color: var(--color-accent-light); /* #58c4c0 */
+}
+
+.desc {
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 460px;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding-top: var(--space-sm);
+}
+
+/* Outline button override for dark bg */
+.ctas :global(.btn.outline) {
+  border-color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.8);
+}
+.ctas :global(.btn.outline):hover {
+  background-color: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.65);
+  color: #fff;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding-top: var(--space-sm);
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.badgeDot {
+  width: 3px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 0; /* square dot */
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Vertical accent line — bottom right */
+.scrollLine {
+  position: absolute;
+  right: var(--container-padding);
+  bottom: 0;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--color-accent));
+  transform-origin: top;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding-bottom: var(--space-4xl);
+    gap: var(--space-lg);
+  }
+  .ctas { flex-direction: column; }
+  .ctas a { justify-content: center; }
+  .badgeDot { display: none; }
+  .badges { gap: var(--space-sm); }
+}

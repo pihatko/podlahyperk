@@ -1,0 +1,33 @@
+{
+  "name": "podlahyperk",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@studio-freight/lenis": "^1.0.42",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.25",
+    "lucide-react": "^0.400.0",
+    "next": "^16.2.9",
+    "ogl": "^1.0.11",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.52.1",
+    "resend": "^3.4.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,181 @@
+
+
+
+
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--color-brand);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-xl);
+}
+
+/* Story */
+.story {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.storyText p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.certList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.certItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: 0.9375rem;
+  color: var(--color-brand-light);
+  font-weight: 500;
+}
+
+.certItem svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.profileCard {
+  padding: var(--space-2xl);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  position: sticky;
+  top: 100px;
+}
+
+.profileAvatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-brand);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileName {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-brand);
+}
+
+.profileRole {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.profileStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.profileStat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profileStatValue {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-brand);
+}
+
+.profileStatLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* Values */
+.valuesHeader {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.valueCard {
+  padding: var(--space-2xl);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.valueIcon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-light);
+  border-radius: var(--radius-md);
+  color: var(--color-brand-light);
+}
+
+.valueTitle {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-brand);
+}
+
+.valueDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .story {
+    grid-template-columns: 1fr;
+  }
+
+  .profileCard {
+    position: static;
+  }
+}

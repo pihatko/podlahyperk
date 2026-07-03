@@ -1,0 +1,37 @@
+/* Square cursor — matches brutalist sharp design */
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-accent);
+  /* Square — no border radius */
+  border-radius: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  will-change: transform;
+  transition: opacity 0.2s ease;
+}
+
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(14, 168, 166, 0.25);
+  /* Square outline — no border radius */
+  border-radius: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  will-change: transform;
+  transition: opacity 0.2s ease, border-color 0.2s ease, width 0.25s ease, height 0.25s ease;
+}
+
+/* Hide on touch devices */
+@media (pointer: coarse) {
+  .dot, .ring { display: none; }
+}

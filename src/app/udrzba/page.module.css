@@ -1,0 +1,85 @@
+
+
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-3xl);
+}
+
+.card {
+  padding: var(--space-xl);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.cardTitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-brand);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 2px solid var(--color-accent-light);
+}
+
+.docList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.docLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  padding: var(--space-sm) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.docLink:hover {
+  color: var(--color-brand-light);
+  background-color: var(--color-surface-2);
+}
+
+.docLink svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.note {
+  text-align: center;
+  padding: var(--space-xl);
+  background-color: var(--color-surface-2);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.noteLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-brand-light);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.noteLink:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

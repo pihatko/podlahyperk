@@ -1,0 +1,20 @@
+.section {
+  padding: var(--space-2xl) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  overflow: hidden;
+}
+
+.label {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.label span {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
