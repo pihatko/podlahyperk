@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     const { error } = await resend.emails.send({
       from: `${SITE_NAME} <noreply@podlahyperk.cz>`,
       to: [process.env.CONTACT_EMAIL ?? CONTACT.email],
-      replyTo: email,
+      replyToAddresses: [email],
       subject: `Nová poptávka od ${name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
