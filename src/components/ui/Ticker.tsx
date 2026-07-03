@@ -32,7 +32,7 @@ export function Ticker({ items, speed = 40, separator = '·' }: TickerProps) {
       duration: totalWidth / speed,
       ease: 'none',
       modifiers: {
-        x: gsap.utils.unitize((x: number) => parseFloat(x) % totalWidth),
+        x: gsap.utils.unitize((x: string) => parseFloat(x) % totalWidth),
       },
     })
 
