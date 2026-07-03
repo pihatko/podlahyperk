@@ -127,7 +127,7 @@
   left: 0;
   right: 0;
   bottom: auto;
-  height: max-content;
+  height: 100vh;
   background-color: #fff;
   padding: var(--space-2xl) var(--container-padding);
   flex-direction: column;

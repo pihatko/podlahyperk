@@ -1,0 +1,151 @@
+.banner {
+  position: fixed;
+  z-index: 9000;
+
+  /* Desktop — vpravo dole */
+  bottom: 2rem;
+  right: 2rem;
+  left: auto;
+  max-width: 380px;
+  width: calc(100% - 4rem);
+
+  background-color: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+
+  border: 1.5px solid #58c4c0;
+  border-radius: 0; /* brutalist — ostré hrany */
+
+  box-shadow:
+    0 4px 24px rgba(14, 168, 166, 0.12),
+    0 1px 4px rgba(0, 0, 0, 0.06);
+
+  animation: slideIn 0.35s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.inner {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title {
+  font-family: 'avenir-next-lt-pro', 'Avenir Next', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #58c4c0;
+}
+
+.desc {
+  font-family: 'avenir-next-lt-pro', 'Avenir Next', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #545a5a;
+}
+
+.actions {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.btnAccept {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-family: 'avenir-next-lt-pro', 'Avenir Next', system-ui, sans-serif;
+  font-size: 0.775rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background-color: #58c4c0;
+  color: #fff;
+  border: 2px solid #58c4c0;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.btnAccept:hover {
+  background-color: #0ea8a6;
+  border-color: #0ea8a6;
+}
+
+.btnDecline {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-family: 'avenir-next-lt-pro', 'Avenir Next', system-ui, sans-serif;
+  font-size: 0.775rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #545a5a;
+  border: 2px solid #58c4c0;
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.btnDecline:hover {
+  border-color: #545a5a;
+  color: #2e3232;
+}
+
+/* Mobile — celá šířka dole */
+@media (max-width: 640px) {
+  .banner {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    width: calc(100% - 2em);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border: 2px solid #58c4c0;
+    margin: 1em;
+  }
+
+  .inner {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .actions {
+    flex-direction: row;
+  }
+}
+
+.policyLink {
+  display: block;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 0.25em 0.6em;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #545a5a;
+  text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease;
+  align-self: flex-start;
+}
+
+.policyLink:hover {
+  border-color: #58c4c0;
+  color: #58c4c0;
+}
+
+.cookieIcon {
+  font-size: 1.1rem;
+  line-height: 1;
+}

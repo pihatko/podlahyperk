@@ -1,10 +1,21 @@
 import type { Metadata } from 'next'
+import { Nunito_Sans } from 'next/font/google'
 import '@/styles/globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { SmoothScroll } from '@/components/ui/SmoothScroll'
 import { CustomCursor } from '@/components/ui/CustomCursor'
+import { CookieBanner } from '@/components/ui/CookieBanner'
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, CONTACT } from '@/lib/constants'
+
+// Nunito Sans — vždy načtený fallback (nejbližší náhrada za Avenir Next)
+// Adobe Fonts se načte dynamicky pouze po souhlasu s cookies
+const nunitoSans = Nunito_Sans({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['300', '400', '600', '700', '800', '900'],
+  variable: '--font-nunito',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -57,12 +68,11 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="cs">
+    <html lang="cs" className={nunitoSans.variable}>
       <head>
-        {/* Adobe Fonts – Avenir Next LT Pro (Project: cqz1mmq) */}
+        {/* Adobe Fonts se NENAČÍTÁ zde — načítá se dynamicky přes CookieBanner */}
+        {/* pouze po udělení souhlasu uživatelem */}
         <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
-        <link rel="preload" href="https://use.typekit.net/cqz1mmq.css" as="style" />
-        <link rel="stylesheet" href="https://use.typekit.net/cqz1mmq.css" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -71,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <SmoothScroll>
           <CustomCursor />
+          <CookieBanner />
           <Header />
           <main>{children}</main>
           <Footer />
