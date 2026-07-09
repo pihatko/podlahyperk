@@ -5,7 +5,6 @@ export const SITE_DESCRIPTION =
 
 export const CONTACT = {
   phone1: '+420 777 651 296',
-  phone2: '+420 777 651 295',
   email: 'info@podlahyperk.cz',
   address: 'Husovo náměstí 24, Chabařovice',
   addressFull: 'Husovo náměstí 24, 403 17 Chabařovice',
@@ -16,6 +15,7 @@ export const CONTACT = {
   mapUrl: 'https://maps.google.com/?q=Podlahy+Perk+Chabařovice',
   instagram: 'https://www.instagram.com/podlahyperk/',
   facebook: 'https://www.facebook.com/www.podlahyperk.cz/',
+  youtube: 'https://www.youtube.com/@podlahyperk',
 }
 
 export const PARTNERS = [

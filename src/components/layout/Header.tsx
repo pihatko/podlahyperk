@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X, Phone, Instagram, Facebook, Youtube } from 'lucide-react'
 import styles from './Header.module.css'
 import { CONTACT } from '@/lib/constants'
 
@@ -62,6 +62,18 @@ export function Header() {
             ))}
           </ul>
         </nav>
+
+        <div className={styles.socialLinks}>
+          <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
+            <Instagram size={17} />
+          </a>
+          <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Facebook">
+            <Facebook size={17} />
+          </a>
+          <a href={CONTACT.youtube} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="YouTube">
+            <Youtube size={17} />
+          </a>
+        </div>
 
         <a href={`tel:${CONTACT.phone1.replace(/\s/g, '')}`} className={styles.phoneLink}>
           <Phone size={15} aria-hidden="true" />

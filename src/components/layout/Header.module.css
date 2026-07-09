@@ -127,7 +127,7 @@
   left: 0;
   right: 0;
   bottom: auto;
-  height: 100vh;
+  height: max-content;
   background-color: #fff;
   padding: var(--space-2xl) var(--container-padding);
   flex-direction: column;
@@ -187,5 +187,32 @@
 
   .mobileMenu {
     display: flex;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.socialIcon:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 960px) {
+  .socialLinks {
+    display: none;
   }
 }

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Youtube } from 'lucide-react'
 import styles from './Footer.module.css'
 import { CONTACT, SITE_NAME } from '@/lib/constants'
 
@@ -47,6 +47,8 @@ export function Footer() {
             </a>
           </div>
 
+
+          <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start' }}>
           <div className={styles.partner}>
             <p className={styles.partnerLabel}>Spolupracujeme</p>
             <a
@@ -59,12 +61,37 @@ export function Footer() {
               <Image
                 src="/videoperk-logo.png"
                 alt="videoperk.cz"
-                width={140}
+                width={125}
                 height={32}
                 className={styles.partnerLogo}
               />
             </a>
           </div>
+
+          <div className={styles.partner}>
+            <p className={styles.partnerLabel}>Sponzorujeme</p>
+            <a
+              href="https://www.fkviagemusti.cz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.partnerLink}
+              aria-label="FK Viagem Ústí nad Labem"
+            >
+              <Image
+                src="/viagem-logo.png"
+                alt="FK Viagem Ústí"
+                width={52}
+                height={80}
+                className={styles.partnerLogo}
+              />
+            </a>
+          </div>
+          </div>
+
+
+
+
+
         </div>
 
         <div className={styles.col}>
@@ -97,11 +124,7 @@ export function Footer() {
                 <Phone size={15} aria-hidden="true" />{CONTACT.phone1}
               </a>
             </li>
-            <li>
-              <a href={`tel:${CONTACT.phone2.replace(/\s/g, '')}`} className={styles.contactLink}>
-                <Phone size={15} aria-hidden="true" />{CONTACT.phone2}
-              </a>
-            </li>
+
             <li>
               <a href={`mailto:${CONTACT.email}`} className={styles.contactLink}>
                 <Mail size={15} aria-hidden="true" />{CONTACT.email}

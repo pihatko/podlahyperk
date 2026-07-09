@@ -179,11 +179,28 @@
 
 .partnerLogo {
   height: auto;
-  width: 125px;
+  width: auto;
   object-fit: contain;
+}
+
+.partnerLogoViagem {
+  height: auto;
+  width: 52px;
+  object-fit: contain;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 6px;
 }
 
 .linkPlain {
   font-size: 0.85rem;
   color: rgba(255,255,255,0.45);
+}
+
+/* Partner + Sponzor vedle sebe */
+.partnersRow {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-xl);
+  align-items: flex-start;
+  flex-wrap: wrap;
 }

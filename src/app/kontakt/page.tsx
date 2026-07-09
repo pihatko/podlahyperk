@@ -76,9 +76,6 @@ export default function KontaktPage() {
                       <a href={`tel:${CONTACT.phone1.replace(/\s/g, '')}`} className={styles.infoLink}>
                         {CONTACT.phone1}
                       </a>
-                      <a href={`tel:${CONTACT.phone2.replace(/\s/g, '')}`} className={styles.infoLink}>
-                        {CONTACT.phone2}
-                      </a>
                     </div>
                   </li>
                   <li className={styles.infoItem}>
