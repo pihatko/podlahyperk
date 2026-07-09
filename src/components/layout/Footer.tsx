@@ -46,6 +46,25 @@ export function Footer() {
               <Facebook size={18} />
             </a>
           </div>
+
+          <div className={styles.partner}>
+            <p className={styles.partnerLabel}>Spolupracujeme</p>
+            <a
+              href="https://videoperk.cz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.partnerLink}
+              aria-label="VideoPerk – video produkce"
+            >
+              <Image
+                src="/videoperk-logo.png"
+                alt="videoperk.cz"
+                width={140}
+                height={32}
+                className={styles.partnerLogo}
+              />
+            </a>
+          </div>
         </div>
 
         <div className={styles.col}>

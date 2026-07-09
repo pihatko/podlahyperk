@@ -146,3 +146,39 @@
 .creditLink:hover {
   color: var(--color-accent-light);
 }
+
+/* Partner sekce */
+.partner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.partnerLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.partnerLink {
+  display: inline-block;
+  width: max-content;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity var(--transition-fast);
+}
+
+.partnerLink:hover {
+  opacity: 0.75;
+}
+
+.partnerLogo {
+  height: auto;
+  width: 125px;
+  object-fit: contain;
+}
