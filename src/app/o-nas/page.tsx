@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { CTABanner } from '@/components/sections/CTABanner'
 import { PartnersStrip } from '@/components/sections/PartnersStrip'
@@ -40,8 +41,12 @@ const values = [
 export default function ONasPage() {
   return (
     <>
-      <div className={pageStyles.pageHeader}>
-        <div className="container">
+      <div className={`${pageStyles.pageHeader} ${pageStyles.withPhoto}`}>
+        <div className={pageStyles.bg} aria-hidden="true">
+          <Image src="/contact-bg.webp" alt="" fill priority quality={88} sizes="100vw" className={pageStyles.bgImage} />
+          <div className={pageStyles.bgOverlay} />
+        </div>
+        <div className={`container ${pageStyles.content}`}>
           <AnimatedSection>
             <p className={pageStyles.eyebrow}>O nás</p>
             <h1 className={pageStyles.heading}>Podlahy Perk</h1>

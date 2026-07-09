@@ -146,5 +146,7 @@
   .ctas { flex-direction: column; }
   .ctas a { justify-content: center; }
   .badgeDot { display: none; }
-  .badges { gap: var(--space-sm); }
+  .badges { flex-direction: column;
+            gap: var(--space-xs);
+            align-items: flex-start; }
 }

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { FileDown, ChevronRight } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
@@ -68,8 +69,12 @@ const categories = [
 export default function UdrzbaPage() {
   return (
     <>
-      <div className={pageStyles.pageHeader}>
-        <div className="container">
+      <div className={`${pageStyles.pageHeader} ${pageStyles.withPhoto}`}>
+        <div className={pageStyles.bg} aria-hidden="true">
+          <Image src="/care-bg.webp" alt="" fill priority quality={88} sizes="100vw" className={pageStyles.bgImage} />
+          <div className={pageStyles.bgOverlay} />
+        </div>
+        <div className={`container ${pageStyles.content}`}>
           <AnimatedSection>
             <p className={pageStyles.eyebrow}>Správná péče</p>
             <h1 className={pageStyles.heading}>Péče o podlahy</h1>

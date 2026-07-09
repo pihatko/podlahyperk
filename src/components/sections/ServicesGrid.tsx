@@ -99,7 +99,7 @@ export function ServicesGrid() {
           {services.map((service) => (
             <Link
               key={service.slug}
-              href={`/sluzby/${service.slug}`}
+              href="/sluzby"
               className={styles.card}
               data-card
               data-cursor

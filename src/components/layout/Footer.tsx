@@ -83,7 +83,7 @@ export function Footer() {
           <ul className={styles.linkList}>
             {serviceLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className={styles.link}>{link.label}</Link>
+                <span className={styles.linkPlain}>{link.label}</span>
               </li>
             ))}
           </ul>
@@ -109,7 +109,9 @@ export function Footer() {
             </li>
             <li className={styles.contactItem}>
               <MapPin size={15} aria-hidden="true" />
-              <span>{CONTACT.addressFull}</span>
+              <a href={CONTACT.mapUrl} target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+                {CONTACT.addressFull}
+              </a>
             </li>
             <li className={styles.contactItem}>
               <Clock size={15} aria-hidden="true" />

@@ -15,7 +15,7 @@ export async function InstagramFeed() {
   }
 
   return (
-    <section className={`section ${styles.section}`}>
+    <section className={`section ${styles.section}`} id="realizace">
       <div className="container">
         <AnimatedSection className={styles.header}>
           <div className={styles.headerLeft}>
@@ -24,6 +24,10 @@ export async function InstagramFeed() {
               @podlahyperk
             </p>
             <h2 className={styles.heading}>Naše realizace na Instagramu</h2>
+            <p className={styles.subheading}>
+              Prohlédněte si ukázky naší práce. Aktuální fotky realizací
+              sdílíme na Instagramu – sledujte nás a nenechte si ujít žádnou novinku.
+            </p>
           </div>
           <Button
             href={CONTACT.instagram}

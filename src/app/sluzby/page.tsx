@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { ArrowRight, Layers, TreePine, SquareStack, Grid3x3, Leaf, Wrench } from 'lucide-react'
+import Image from 'next/image'
+import { Layers, TreePine, SquareStack, Grid3x3, Leaf, Wrench } from 'lucide-react'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { CTABanner } from '@/components/sections/CTABanner'
 import { services } from '@/lib/services'
@@ -25,8 +25,12 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function SluzbyPage() {
   return (
     <>
-      <div className={pageStyles.pageHeader}>
-        <div className="container">
+      <div className={`${pageStyles.pageHeader} ${pageStyles.withPhoto}`}>
+        <div className={pageStyles.bg} aria-hidden="true">
+          <Image src="/services-bg.webp" alt="" fill priority quality={88} sizes="100vw" className={pageStyles.bgImage} />
+          <div className={pageStyles.bgOverlay} />
+        </div>
+        <div className={`container ${pageStyles.content}`}>
           <AnimatedSection>
             <p className={pageStyles.eyebrow}>Co umíme</p>
             <h1 className={pageStyles.heading}>Naše služby</h1>
@@ -44,7 +48,7 @@ export default function SluzbyPage() {
           <div className={styles.grid}>
             {services.map((service, i) => (
               <AnimatedSection key={service.slug} delay={i * 0.07}>
-                <Link href={`/sluzby/${service.slug}`} className={styles.card}>
+                <div className={styles.card}>
                   <div className={styles.cardIcon} aria-hidden="true">
                     {iconMap[service.icon]}
                   </div>
@@ -62,10 +66,7 @@ export default function SluzbyPage() {
                       </li>
                     )}
                   </ul>
-                  <span className={styles.cta}>
-                    Více informací <ArrowRight size={16} aria-hidden="true" />
-                  </span>
-                </Link>
+                </div>
               </AnimatedSection>
             ))}
           </div>

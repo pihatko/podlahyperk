@@ -10,7 +10,7 @@ import { CONTACT } from '@/lib/constants'
 
 const navLinks = [
   { href: '/sluzby', label: 'Služby' },
-  { href: '/realizace', label: 'Realizace' },
+  { href: '/#realizace', label: 'Realizace' },
   { href: '/udrzba', label: 'Péče o podlahy' },
   { href: '/o-nas', label: 'O nás' },
   { href: '/kontakt', label: 'Kontakt' },

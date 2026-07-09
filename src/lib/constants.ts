@@ -19,16 +19,18 @@ export const CONTACT = {
 }
 
 export const PARTNERS = [
-  { name: 'Forbo Marmoleum', url: 'https://www.forbo.com/' },
-  { name: 'Tarkett', url: 'https://www.tarkett.cz/' },
-  { name: 'Floor Forever', url: 'https://www.floorforever.cz/' },
-  { name: 'Fatra Floor', url: 'https://www.fatrafloor.cz/' },
-  { name: 'Bona', url: 'https://www.bona.com/cz/' },
-  { name: 'Bostik', url: 'https://www.bostik.com/' },
-  { name: 'Soudal', url: 'https://www.soudal.cz/' },
-  { name: 'Woca Denmark', url: 'https://www.wocadenmark.com/' },
-  { name: 'Amtico', url: 'https://www.amticofirst.cz/' },
-  { name: 'Döllken', url: 'https://www.doellken-weimar.de/cz/' },
+  { name: 'Forbo Marmoleum', url: 'https://www.forbo.com/', logo: '/logos/forbo-logo.jpg' },
+  { name: 'Tarkett', url: 'https://www.tarkett.cz/', logo: '/logos/tarkett-logo.jpg' },
+  { name: 'Floor Forever', url: 'https://www.floorforever.cz/', logo: '/logos/floor-forever-logo.jpg' },
+  { name: 'Fatra Floor', url: 'https://www.fatrafloor.cz/', logo: '/logos/fatra-logo.jpg' },
+  { name: 'Bona', url: 'https://www.bona.com/cz/', logo: '/logos/bona-logo.jpg' },
+  { name: 'Bostik', url: 'https://www.bostik.com/', logo: '/logos/bostik-logo.jpg' },
+  { name: 'Soudal', url: 'https://www.soudal.cz/', logo: '/logos/soudal-logo.png' },
+  { name: 'Woca Denmark', url: 'https://www.wocadenmark.com/', logo: '/logos/woca-logo.png' },
+  { name: 'Amtico', url: 'https://www.amticofirst.cz/', logo: '/logos/amtico-logo.png' },
+  { name: 'Döllken', url: 'https://www.doellken-weimar.de/cz/', logo: '/logos/dollken-logo.png' },
+  { name: 'Acara', url: 'https://www.acara.cz/', logo: '/logos/acara-logo.png' },
+  { name: 'Vox', url: 'https://www.vox.pl/podlogi-listwy-i-profile-podlogowe', logo: '/logos/vox-logo.jpg' },
 ]
 
 export const STATS = [

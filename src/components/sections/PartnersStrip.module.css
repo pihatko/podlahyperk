@@ -4,6 +4,7 @@
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-surface);
   overflow: hidden;
+  position: relative;
 }
 
 .label {
@@ -17,4 +18,95 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+}
+
+/* Ticker */
+.tickerWrapper {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  flex-shrink: 0;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0 1.25rem;
+}
+
+.partnerLink {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.partnerLink:hover .itemText {
+  color: var(--color-accent);
+}
+
+.itemText {
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-brand-dark);
+  transition: color 150ms ease;
+}
+
+.sep {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-accent);
+  border-radius: 0; /* kostička — odpovídá hranatému designu webu */
+  flex-shrink: 0;
+}
+
+/* Plovoucí logo */
+.floatingLogo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9990;
+  pointer-events: none;
+  will-change: transform, opacity;
+  background: #fff;
+  border: 1.5px solid var(--color-border);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  min-height: 60px;
+}
+
+.floatingImg {
+  max-width: 160px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
