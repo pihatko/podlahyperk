@@ -8,6 +8,12 @@ export async function POST(request: Request) {
     const body = await request.json()
     const parsed = contactSchema.safeParse(body)
 
+    // Honeypot server-side check
+    if (body.website) {
+      // Bot vyplnil skryté pole — tiše odmítnout
+      return NextResponse.json({ success: true })
+    }
+
     if (!parsed.success) {
       return NextResponse.json(
         { error: 'Neplatná data formuláře', details: parsed.error.issues },

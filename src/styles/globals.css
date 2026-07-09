@@ -97,7 +97,7 @@ input, textarea, select {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: normal;
   color: var(--color-brand-dark);
   letter-spacing: -0.03em;
 }

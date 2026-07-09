@@ -24,6 +24,14 @@ export function ContactForm() {
   })
 
   const onSubmit = async (data: ContactSchema) => {
+    // Honeypot check — pokud je pole vyplněné, jde o bota
+    const honeypot = (document.getElementById('website') as HTMLInputElement)?.value
+    if (honeypot) {
+      // Tiše ignorovat — bot si myslí že formulář prošel
+      setStatus('success')
+      return
+    }
+
     setStatus('loading')
     try {
       const res = await fetch('/api/contact', {
@@ -150,6 +158,18 @@ export function ContactForm() {
             {errors.message.message}
           </p>
         )}
+      </div>
+
+      {/* Honeypot — skryté před uživatelem, boti ho vyplní */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none', tabIndex: -1 }}>
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          autoComplete="off"
+          tabIndex={-1}
+        />
       </div>
 
       {status === 'error' && (
