@@ -1,13 +1,25 @@
-import { NextResponse } from 'next/server'
-import { getInstagramFeed } from '@/lib/instagram'
-
-export const revalidate = 3600 // cache 1 hodina
+import { NextResponse } from "next/server";
 
 export async function GET() {
-  try {
-    const posts = await getInstagramFeed(9)
-    return NextResponse.json({ posts })
-  } catch {
-    return NextResponse.json({ posts: [] })
+  const token = process.env.INSTAGRAM_ACCESS_TOKEN;
+
+  if (!token) {
+    return NextResponse.json(
+      { error: "Instagram token missing" },
+      { status: 500 }
+    );
   }
+
+  const response = await fetch(
+    `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${token}`,
+    {
+      next: {
+        revalidate: 3600,
+      },
+    }
+  );
+
+  const data = await response.json();
+
+  return NextResponse.json(data);
 }
