@@ -161,7 +161,7 @@ export function ContactForm() {
       </div>
 
       {/* Honeypot — skryté před uživatelem, boti ho vyplní */}
-      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none', tabIndex: -1 }}>
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
         <label htmlFor="website">Website</label>
         <input
           type="text"
