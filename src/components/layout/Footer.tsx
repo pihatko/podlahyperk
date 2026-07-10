@@ -48,7 +48,7 @@ export function Footer() {
           </div>
 
 
-          <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start' }}>
+          <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start' }} className={styles.partnerrow}>
           <div className={styles.partner}>
             <p className={styles.partnerLabel}>Spolupracujeme</p>
             <a
