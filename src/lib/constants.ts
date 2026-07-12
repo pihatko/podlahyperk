@@ -35,7 +35,7 @@ export const PARTNERS = [
 
 export const STATS = [
   { value: '15+', label: 'let praxe' },
-  { value: '500+', label: 'realizací' },
+  { value: '5000+', label: 'realizací' },
   { value: '10+', label: 'prémiových značek' },
   { value: '2', label: 'certifikace Forbo' },
 ]

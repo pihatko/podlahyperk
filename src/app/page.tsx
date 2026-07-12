@@ -6,6 +6,7 @@ import { InstagramFeed } from '@/components/sections/InstagramFeed'
 import { CTABanner } from '@/components/sections/CTABanner'
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from '@/lib/constants'
 import type { Metadata } from 'next'
+import { YouTubeFeed } from '@/components/sections/YouTubeFeed'
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} – Pokládka podlah Ústí nad Labem`,
@@ -21,6 +22,7 @@ export default function HomePage() {
       <StatsSection />
       <PartnersStrip />
       <InstagramFeed />
+      <YouTubeFeed />
       <CTABanner />
     </>
   )

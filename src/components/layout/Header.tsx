@@ -63,6 +63,11 @@ export function Header() {
           </ul>
         </nav>
 
+        <a href={`tel:${CONTACT.phone1.replace(/\s/g, '')}`} className={styles.phoneLink}>
+          <Phone size={15} aria-hidden="true" />
+          <span>{CONTACT.phone1}</span>
+        </a>
+
         <div className={styles.socialLinks}>
           <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
             <Instagram size={17} />
@@ -75,10 +80,7 @@ export function Header() {
           </a>
         </div>
 
-        <a href={`tel:${CONTACT.phone1.replace(/\s/g, '')}`} className={styles.phoneLink}>
-          <Phone size={15} aria-hidden="true" />
-          <span>{CONTACT.phone1}</span>
-        </a>
+        
 
         <button
           className={styles.menuToggle}
@@ -106,10 +108,24 @@ export function Header() {
             ))}
           </ul>
         </nav>
+        
         <a href={`tel:${CONTACT.phone1.replace(/\s/g, '')}`} className={styles.mobilePhone}>
           <Phone size={18} aria-hidden="true" />
           {CONTACT.phone1}
         </a>
+
+        <div className={styles.MobileSocialLinks}>
+          <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
+            <Instagram size={17} />
+          </a>
+          <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Facebook">
+            <Facebook size={17} />
+          </a>
+          <a href={CONTACT.youtube} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="YouTube">
+            <Youtube size={17} />
+          </a>
+        </div>
+
       </div>
     </header>
   )

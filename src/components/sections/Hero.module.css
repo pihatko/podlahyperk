@@ -63,7 +63,7 @@
 .heading {
   font-size: clamp(3.5rem, 10vw, 7.5rem);
   font-weight: 900;
-  line-height: normal;
+  line-height: calc(1em + 12%);
   letter-spacing: -0.02em;
 }
 

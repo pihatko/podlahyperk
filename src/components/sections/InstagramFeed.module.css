@@ -41,6 +41,17 @@
   gap: var(--space-sm);
 }
 
+/* Na desktopu zobrazit jen první 3 */
+.grid > *:nth-child(n+4) {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .grid > *:nth-child(n+4) {
+    display: block;
+  }
+}
+
 .item {
   display: block;
   text-decoration: none;

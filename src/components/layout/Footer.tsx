@@ -45,6 +45,10 @@ export function Footer() {
               className={styles.socialLink} aria-label="Facebook Podlahy Perk">
               <Facebook size={18} />
             </a>
+            <a href={CONTACT.youtube} target="_blank" rel="noopener noreferrer"
+              className={styles.socialLink} aria-label="YouTube Podlahy Perk">
+              <Youtube size={18} />
+            </a>
           </div>
 
 
