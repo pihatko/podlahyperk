@@ -19,8 +19,10 @@ export function StatsSection() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const ctx = gsap.context(() => {
+      // Na mobilu neanimujeme x (způsobuje overflow), jen fade
+      const isMobile = window.innerWidth < 900
       gsap.fromTo(textRef.current,
-        { opacity: 0, x: -40 },
+        { opacity: 0, x: isMobile ? 0 : -40 },
         {
           opacity: 1, x: 0, duration: 0.9, ease: 'power3.out',
           scrollTrigger: { trigger: textRef.current, start: 'top 85%', once: true },

@@ -7,7 +7,6 @@
   overflow: hidden;
 }
 
-/* Watermark logo — přes celou sekci pod vším */
 .watermark {
   position: absolute;
   inset: 0;
@@ -33,11 +32,11 @@
   align-items: center;
 }
 
-/* Text column */
 .text {
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
+  min-width: 0;
 }
 
 .eyebrow {
@@ -61,18 +60,15 @@
   line-height: 1.75;
 }
 
-/* Stats grid
-   — background: transparent (žádná barva nepřekrývá watermark)
-   — border přes outline, ne background-color triku
-*/
 .stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* Border kolem celé mřížky */
   outline: 1px solid var(--color-border-strong);
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Každá dlaždice má border jen vpravo a dole — tvoří vnitřní mřížku */
 .stat {
   display: flex;
   flex-direction: column;
@@ -80,19 +76,15 @@
   padding: var(--space-2xl);
   border-right: 1px solid var(--color-border-strong);
   border-bottom: 1px solid var(--color-border-strong);
-  /* Průhledné pozadí — watermark plně prosvítá */
   background-color: rgba(255, 255, 255, 0.25);
-  /* Blur jen pod dlaždicí */
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 
-/* Poslední sloupec — zrušit pravý border */
 .stat:nth-child(2n) {
   border-right: none;
 }
 
-/* Poslední řádek — zrušit spodní border */
 .stat:nth-last-child(-n+2) {
   border-bottom: none;
 }
@@ -115,10 +107,19 @@
 }
 
 @media (max-width: 900px) {
-  .inner { grid-template-columns: 1fr; gap: var(--space-3xl); }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    width: 100%;
+  }
+
+  .stats {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
   .statValue { font-size: 2.25rem; }
-  .stat { padding: var(--space-xl); }
+  .stat { padding: var(--space-md); }
 }
